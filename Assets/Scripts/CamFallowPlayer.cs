@@ -16,4 +16,6 @@ public class CamFallowPlayer : MonoBehaviour
         transform.position = speedPos;
         transform.LookAt(lookTarget.position);
     }
+
+  
 }

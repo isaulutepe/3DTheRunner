@@ -412,8 +412,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraTarget: {fileID: 1984877183}
-  sSpeed: 10
-  distance: {x: 0, y: 3.7, z: -6}
+  sSpeed: 2
+  distance: {x: 1.4, y: 3.7, z: -6}
   lookTarget: {fileID: 1276654616}
 --- !u!1 &1276654615
 GameObject:
@@ -492,6 +492,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runningSpeed: 5
+  xSpeed: 250
+  limitX: 3.67
 --- !u!1 &9171101535764583
 GameObject:
   m_ObjectHideFlags: 0
