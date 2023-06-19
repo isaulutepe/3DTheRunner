@@ -38,4 +38,12 @@ public class PlayerController : MonoBehaviour
         transform.position = newPosition;
 
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            Debug.Log("Öldün bro");
+        }
+    }
 }
