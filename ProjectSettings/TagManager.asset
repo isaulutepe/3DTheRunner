@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Coin
   - Obstacle
+  - speedBoost
   layers:
   - Default
   - TransparentFX
