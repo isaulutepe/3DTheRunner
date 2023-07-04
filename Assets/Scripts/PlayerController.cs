@@ -7,11 +7,23 @@ public class PlayerController : MonoBehaviour
     public float runningSpeed;
     public float xSpeed; //X eksenindeki hýzýmýzý belirlemek için.
     public float limitX;
+    public Animator anim;
+    public GameObject Player;
 
+    private void Start()
+    {
+        anim= GetComponent<Animator>();
+    }
 
     private void Update()
     {
         SwipeCheck();
+        if (runningSpeed <=0)
+        {
+            Debug.Log("Animasyonu durdur.");
+            anim.SetTrigger("EndAnim");
+
+        }
     }
 
     private void SwipeCheck()
@@ -36,7 +48,6 @@ public class PlayerController : MonoBehaviour
         newX = Mathf.Clamp(newX, -limitX, limitX); //X pozisyonunu bir aralýkta seçmek için kullanýlan hazýr bir methottur.
         Vector3 newPosition = new Vector3(newX, transform.position.y, transform.position.z + runningSpeed * Time.deltaTime);
         transform.position = newPosition;
-
     }
 
    
