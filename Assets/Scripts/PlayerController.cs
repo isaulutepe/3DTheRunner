@@ -22,7 +22,6 @@ public class PlayerController : MonoBehaviour
         SwipeCheck();
         if (runningSpeed <=0)
         {
-            Debug.Log("Animasyonu durdur.");
             anim.SetTrigger("EndAnim");
 
         }

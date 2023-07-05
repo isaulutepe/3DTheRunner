@@ -25,7 +25,6 @@ public class Deneme1 : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Obstacle"))
         {
-            Debug.Log("AI DEAD");
             transform.position = startPosition; //Öldükten sonra baþlangýç konumuna geri döner;
         }
     }
