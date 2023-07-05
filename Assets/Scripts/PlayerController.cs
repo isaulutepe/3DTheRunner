@@ -7,12 +7,14 @@ public class PlayerController : MonoBehaviour
     public float runningSpeed;
     public float xSpeed; //X eksenindeki hýzýmýzý belirlemek için.
     public float limitX;
-    public Animator anim;
-    public GameObject Player;
+    private Animator anim;
+
+    public GameObject speedBooster;
 
     private void Start()
     {
         anim= GetComponent<Animator>();
+        speedBooster.SetActive(false);
     }
 
     private void Update()

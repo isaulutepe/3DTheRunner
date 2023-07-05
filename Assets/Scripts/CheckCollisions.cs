@@ -10,7 +10,7 @@ public class CheckCollisions : MonoBehaviour
     public int score;
     public TextMeshProUGUI CoinText;
     public GameObject startPosition;
-    public GameObject speedBoosterIcon;
+
  
     private void OnTriggerEnter(Collider other)
     {
@@ -24,6 +24,14 @@ public class CheckCollisions : MonoBehaviour
         {
             PlayerFinished();
             
+        }
+        if (other.gameObject.CompareTag("speedBoost"))
+        {
+            StartCoroutine(Booster());
+        }
+        if (other.gameObject.CompareTag("slowDown"))
+        {
+            StartCoroutine(slowDown());
         }
     }
     public void PlayerFinished()
@@ -47,6 +55,20 @@ public class CheckCollisions : MonoBehaviour
         score++;
         CoinText.text="Score: "+score.ToString();
 
+    }
+    IEnumerator Booster()
+    {
+        GetComponent<PlayerController>().speedBooster.SetActive(true);
+        GetComponent<PlayerController>().runningSpeed=8;
+        yield return new WaitForSeconds(4);
+        GetComponent<PlayerController>().speedBooster.SetActive(false);
+        GetComponent<PlayerController>().runningSpeed=5;
+    }
+    IEnumerator slowDown() //Yavaþlatma bloklarýna girerse.
+    {
+        GetComponent<PlayerController>().runningSpeed = 3;
+        yield return new WaitForSeconds(2);
+        GetComponent<PlayerController>().runningSpeed = 5;
     }
 
 }
